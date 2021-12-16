@@ -18,8 +18,7 @@ export default {
 
 <style lang="scss">
 #app{
-  font-family: $font-family-secondary;
-  
+  font-family: $font-family-secondary; 
 }
 
 
