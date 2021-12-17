@@ -5,11 +5,13 @@
         <img class="logo" src="../assets/img/logo.png" alt="AdoptMe.org Logo" />
         <h2>AdoptMe.org</h2>
       </div>
-      <a href="#">WHAT we do</a>
-      <a href="#">WHO we are</a>
-      <a href="#">EVENTS adoption</a>
+      <div id="nav-links">
+        <a href="#">WHAT we do</a>
+        <a href="#">WHO we are</a>
+        <a href="#">EVENTS adoption</a>
+      </div>
     </nav>
-    <div class="hero-image">
+    <div class="hero">
       <div class="hero-text">
         <h1>This is your new Family</h1>
         <button>Adopt Now</button>
@@ -20,7 +22,7 @@
 
     <b-container class="middle-container">
       <b-row>
-        <b-col id="volunteer-container" cols="4">
+        <b-col id="volunteer-container" cols="4" fluid="lg">
           <h2 id="volunteer-header">VOLUNTEERS</h2>
           <img
             id="volunteer-image"
@@ -33,7 +35,7 @@
           </p>
           <button>JOIN US</button>
         </b-col>
-        <b-col id="testimonial-container" cols="8">
+        <b-col id="testimonial-container" cols="7" fluid="xl">
           <h2 id="testimonial-header">TESTIMONIAL OF THE MONTH</h2>
           <img
             id="testimonial-image"
@@ -45,58 +47,78 @@
     </b-container>
     <!-- PROGRAMS -->
 
-    <div id="mid-links">
-      <h2>PROGRAMS</h2>
-      <h2>ASSOCIATED COMPANIES</h2>
-    </div>
+    
     <b-container id="dog-vest-container">
+      <b-row id="mid-links">
+      <b-col cols="1" fluid="sm">PROGRAMS</b-col>
+      <b-col cols="2" fluid="sm">ASSOCIATED COMPANIES</b-col>
+    </b-row>
       <b-row>
-      <b-col>
-        <b-container class="programs">
-          <b-row class="programs-container">
-            <b-col cols="2"
-              ><img src="../assets/img/friend-in-trouble.png" alt="" />
-            </b-col>
-            <b-col class="programs-text">
-              <h4>BEHAVIOR PROGRAM</h4>
-              <p>
-                Evaluation of each dog using specialist who determine the best
-                training that will help your friend be a better family member
-              </p>
-              <button class="read-more">READ MORE</button>
-            </b-col>
-          </b-row>
-          <b-row class="programs-container">
-            <b-col cols="2"
-              ><img src="../assets/img/dog-friends.png" alt="Two friendly dogs"
-            /></b-col>
-            <b-col class="programs-text">
-              <h4>MY NEXT FAMILY</h4>
-              <p>
-                Are you looking for a new family member? The this program is for
-                you. Don't buy, adopt here, and let's give a home to these
-                amazing friends
-              </p>
-              <button class="read-more">READ MORE</button>
-            </b-col>
-          </b-row>
-        </b-container>
-      </b-col>
-      <b-col cols="4"
-        ><img id="dog-in-vest" src="../assets/img/dog-in-vest.png" alt=""
-      /></b-col>
+        <b-col>
+          <b-container class="programs">
+            <b-row class="programs-container">
+              <b-col cols="2"
+                ><img src="../assets/img/friend-in-trouble.png" alt="Dog in a dog house" />
+              </b-col>
+              <b-col class="programs-text">
+                <h4>BEHAVIOR PROGRAM</h4>
+                <p>
+                  Evaluation of each dog using specialist who determine the best
+                  training that will help your friend be a better family member
+                </p>
+                <button class="read-more">READ MORE</button>
+              </b-col>
+            </b-row>
+            <b-row class="programs-container">
+              <b-col cols="2"
+                ><img
+                  src="../assets/img/dog-friends.png"
+                  alt="Two friendly dogs"
+              /></b-col>
+              <b-col class="programs-text">
+                <h4>MY NEXT FAMILY</h4>
+                <p>
+                  Are you looking for a new family member? The this program is
+                  for you. Don't buy, adopt here, and let's give a home to these
+                  amazing friends
+                </p>
+                <button class="read-more">READ MORE</button>
+              </b-col>
+            </b-row>
+          </b-container>
+        </b-col>
+        <b-col cols="4"
+          ><img id="dog-in-vest" src="../assets/img/dog-in-vest.png" alt="Dog in an adopt me vest"
+        /></b-col>
       </b-row>
     </b-container>
 
     <!-- FOOTER -->
+    <hr>
     <footer>
-      <div class="logo-with-text">
-        <img src="../assets/img/logo.png" alt="AdoptMe.org Logo" />
-        <h1>AdoptMe.org</h1>
-      </div>
-      <a href="#">WHAT we do</a>
-      <a href="#">WHO we are</a>
-      <a href="#">EVENTS adoption</a>
+      <b-containter>
+        <b-row>
+          <b-col >
+            <b-container>
+              <b-row class="bottom-logo d-inline-flex" cols="4" >
+                <img id="footer-logo" src="../assets/img/logo.png" alt="AdoptMe.org Logo" />
+                <h1>AdoptMe.org</h1>
+              </b-row>
+              <b-row id="address">
+                <p>Main St #1245</p>
+                <p>Amazing City, 45677</p>
+              </b-row>
+            </b-container>
+          </b-col>
+          <b-col id="bottom-links" cols="8" align-v="center">
+            <a href="#">WHAT we do</a>
+            <a href="#">WHO we are</a>
+            <a href="#">EVENTS adoption</a>
+          </b-col>
+        </b-row>
+
+        <p id="upsplash">Some images were taken from upsplash.com</p>
+      </b-containter>
     </footer>
   </div>
 </template>
@@ -112,56 +134,74 @@ nav {
   background-color: $color-red;
   display: flex;
   margin: 0px;
-  padding: 1rem;
-  justify-content: space-evenly;
+  padding: 1rem 8rem;
+  justify-content: space-between;
   align-items: center;
+  font-family: $font-family-secondary;
 }
 
 .logo-with-text {
   display: flex;
   color: white;
+  align-items: center;
+}
+
+#nav-links {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bolder;
+  font-family: $font-family-primary;
+  font-size: 1rem;
 }
 
 a {
-  color: white;
-  text-decoration: none;
+  color: white !important;
+  text-decoration: none !important;
+  padding: 1rem;
 }
 
-.hero-image {
+.hero {
   background-image: url(../assets/img/dogs.jpg);
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  display: flex;
-  flex-flow: column;
-  justify-content: left;
+  vertical-align: bottom;
 }
 
 .hero-text {
-  background-color: black;
-  opacity: 0.3;
+  background: rgba(0, 0, 0, 0.2);
   position: absolute;
-  top: 50%;
+  bottom: -18%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  vertical-align: text-bottom;
   color: $color-red;
+  padding: 2% 10%;
+  padding-left: 10%;
+  margin-bottom: 0;
+}
+
+.hero-text h1 {
+  font-family: $font-family-secondary;
+  font-size: 60px;
+  font-weight: 300;
 }
 
 .hero-text button {
   border: 2px $color-red solid;
   background-color: transparent;
-  padding: 0 1%;
+  padding: 0.5% 2%;
   font-weight: bold;
-  margin-left: 5%;
   color: $color-red;
 }
 
 .middle-container {
   margin: 5% 8%;
+  font-family: $font-family-secondary;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #volunteer-container {
@@ -172,15 +212,17 @@ a {
 #volunteer-header {
   color: white;
   background-color: $color-blue;
-  padding: 0.5rem;
+  padding: 1rem;
   margin: 0px auto;
+  font-family: $font-family-secondary;
+  font-weight: bold;
 }
 
 #volunteer-container button {
   border: 2px $color-blue solid;
   background-color: white;
   padding: 1% 5%;
-  font-weight: bold;
+  font-weight: bolder;
   color: $color-blue;
   margin-left: 5%;
 }
@@ -202,8 +244,10 @@ a {
 #testimonial-header {
   color: white;
   background-color: $color-red;
-  padding: 0.5rem;
+  padding: 1rem;
   margin: 0px auto;
+  font-family: $font-family-secondary;
+  font-weight: bold;
 }
 
 #testimonial-container img {
@@ -214,32 +258,43 @@ a {
   display: flex;
   flex-direction: row;
   font-weight: bolder;
-  margin-left: 6%;
+  margin-left: 1%;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-family: $font-family-secondary;
 }
 
 #mid-links h2 {
-  margin-right: 5%;
+  margin-left: 3%;
+  margin-bottom: 2%;
 }
 
-#mid-links h2:hover {
-  color: $color-blue;
-  text-decoration: underline;
+#mid-links :hover {
+  color: $color-blue !important;
+  text-decoration: underline !important;
 }
 
-// .programs-container {
-//   margin-left: 10%;
-//   margin-bottom: 2%;
-// }
+.programs-container {
+  margin-left: 10%;
+  margin-bottom: 2%;
+  font-family: $font-family-secondary;
+  font-weight: bold;
+}
 
 .programs-container img {
-  width: 100%;
+  width: 110%;
 }
 
+.programs-text {
+  margin-bottom: 0;
+  
+}
 .programs-container h4 {
   color: $color-red;
   font-weight: bold;
+  font-family: $font-family-secondary;
 }
-.programs-container p {
+.programs-container {
   color: $color-gray;
 }
 
@@ -249,20 +304,63 @@ a {
   padding: 1% 5%;
   font-weight: bold;
   color: $color-red;
+  margin-bottom: 0;
 }
-
-// .programs-container{
-//   display: flex;
-//   flex-direction: row;
-// }
 
 #dog-in-vest {
   display: inline-block;
   width: 100%;
- vertical-align: middle;
+  vertical-align: middle;
 }
+
+
+.bottom-logo {
+  color: white;
+  justify-items: center !important;
+}
+
+
+#footer-logo{
+  padding: 0;
+}
+
 footer {
   background-color: $color-blue;
-  display: flex;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 6%;
+  color:white;
+  align-items: center;
+}
+
+hr {
+  border: .25rem solid $color-red !important;
+  opacity: 1 !important;
+  margin-bottom: 0 !important;
+}
+
+footer p{
+  line-height: .5;
+}
+
+#address{
+  padding-top: 5%;
+}
+
+#upsplash{
+  background-color: $color-blue;
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  padding-left: 1.5%;
+  margin-bottom: 0;
+}
+
+#bottom-links{
+  text-align: left;
+  padding-left: 10%;
+  font-weight: bold;
+  font-size: large;
+  font-family: $font-family-primary;
 }
 </style>
